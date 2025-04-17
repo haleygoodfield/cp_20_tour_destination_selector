@@ -1,43 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import TourCard from './TourCard';
+import React, { useEffect, useState } from 'react'; // Importing React and hooks
+import TourCard from './TourCard'; // Importing TourCard component
 
-const Gallery = ({ tours, setTours, onRemove }) => {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  const fetchTours = async () => {
-    try {
-      const res = await fetch("https://api.allorigins.win/raw?url=https://course-api.com/react-tours-project");
-      const data = await res.json();
-      setTours(data);
-      setLoading(false);
-    } catch (err) {
-      setError(true);
-      setLoading(false);
+const Gallery = ({ tours, loading, error, selectedDestination, onRefresh, onRemove }) => { // Gallery component to display tours
+  const filteredTours = selectedDestination === "All" 
+  ? tours
+    : tours.filter((tour) => tour.name.includes(selectedDestination)); // Filter tours based on selected destination
+  
+    if (loading) return <h2>Loading...</h2>; // Loading message
+    if (error) return <h2>Something went wrong. Please try again later.</h2>; // Error message
+    if (filteredTours.length === 0) { // No tours available
+        return (
+            <div>
+            {/* Message when no tours are available */}
+            <h2>No Tours Left</h2> 
+            {/* Option to select another destinaiton */}
+            <p>Please select a different destination.</p> 
+            {/*Refresh button to fetch tours again */}
+            <button onClick={onRefresh}>Refresh</button> 
+            </div>
+        );
     }
-  };
 
-  useEffect(() => {
-    fetchTours();
-  }, []);
-
-  if (loading) return <h2>Loading...</h2>;
-  if (error) return <h2>Something went wrong. Please try again later.</h2>;
-  if (tours.length === 0)
-    return (
-      <div>
-        <h2>No Tours Left</h2>
-        <button onClick={fetchTours}>Refresh</button>
-      </div>
-    );
-
-  return (
-    <section className="gallery">
-      {tours.map((tour) => (
-        <TourCard key={tour.id} {...tour} onRemove={onRemove} />
+  return ( 
+    <section className="gallery">  
+      {filteredTours.map((tour) => (
+        // TourCard component to display each tour 
+        <TourCard key={tour.id} {...tour} onRemove={onRemove} /> 
       ))}
     </section>
   );
 };
 
-export default Gallery;
+export default Gallery; // Exporting Gallery component
