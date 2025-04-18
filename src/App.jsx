@@ -34,7 +34,7 @@ const App = () => { // Main App component
   
   return (
     <main>
-      <h1>Tour Comparison</h1> {/* Main heading */}
+      <h1>Exlore Our Tours</h1> {/* Main heading */}
       <DestinationSelector // Destination selector component
         tours={tours}
         selected={selectedDestination}
