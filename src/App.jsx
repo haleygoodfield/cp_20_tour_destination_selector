@@ -20,18 +20,18 @@ const App = () => { // Main App component
     } finally { 
       setLoading(false); // Setting loading to false after fetching data
     }
-  };
-
-  // Remove the Tour
-  const removeTour = (id) => { // Function to remove a tour
-    const updatedTours = tours.filter((tour) => tour.id !== id); // Filtering out the removed tour
-    setTours(updatedTours); // Updating tours state
-  };
+  }; 
 
   useEffect(() => { // useEffect to fetch tours data on component mount
-    fetchTours();
+    fetchTours(); 
   }, []);
 
+  const removeTour = (id) => { // Function to remove a tour
+    setTours((prevTours) => prevTours.filter((tour) => tour.id !== id)); // Filtering out the removed tour
+  };
+
+  const filteredTours = selectedDestination === "All" ? tours : tours.filter((tour) => tour.name === selectedDestination); // Filtering tours based on selected destination
+  
   return (
     <main>
       <h1>Tour Comparison</h1> {/* Main heading */}
@@ -41,7 +41,7 @@ const App = () => { // Main App component
         setSelected={setSelectedDestination}
       />
       <Gallery  // Gallery component to display tours
-        tours={tours} 
+        tours={filteredTours} 
         loading={loading}
         error={error}
         selectedDestination={selectedDestination}  // Filtered tours based on selected destination
