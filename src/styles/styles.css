@@ -7,6 +7,8 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Tour card container */
@@ -18,6 +20,7 @@ body {
     padding: 20px;
     margin: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 /* Tour card hover effect*/
@@ -26,62 +29,100 @@ body {
     box-shadow: 0 10px 20px rgba(248, 205, 211, 0.4);
 }
 
-/* Tour name styling*/
+/* Tour name styling (title)*/
 .tour-card .tour-info {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #cb3b6d;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
-/* Tour price styling*/
-.tour-card .tour-info .tour-price {
-    font-size: 1.5rem;
+/* Tour Price styling*/
+.tour-card .tour-price {
+    font-size: 1.3rem;
     color: #c7567c;
     margin-bottom: 8px;
 }
 
-/* Tour card description */
+/* Tour card description (text) */
 .tour-card p {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.5;
-    margin-bottom: 16px;
+    font-size: 1.2rem;
+    color: #2d0d25;
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
 
-/* Buttons inside tour cards */
-.tour-card .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #f48fb1;
+/* Button group styling */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Base style for all buttons */
+.btn {
     border: none;
-    border-radius: 4px;
-    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1 rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Main Heading */
+/* Read More button */
+.btn-readmore {
+    background-color: #f8bcd0;
+    color: #6e1844;
+}
+
+/* Not Interested button */
+.btn-remove {
+    background-color: #f06292;
+    color: #ffffff;
+}
+/* Not Interested button hover effect */
+.btn-remove:hover {
+    background-color: #ec407a;
+}
+
+/* Shared heading styles*/
 h1, h2, h3 {
     color: #d74e7c;
-    font-size: 5rem;
     font-weight: 700;
     text-align: center;
 }
-/* Making size smaller */
+
+/* Main heading style (h1) */
+h1 {
+    font-size: 5rem;
+    margin: 30px 0;
+}
+
+/* Main heading style (h2) */
 h2 {
     font-size: 2.5rem;
     margin: 10px 0;
 }
-/* Making size even smaller */
+/* Main heading style (h3) */
 h3 {
     font-size: 2rem;
     margin: 10px 0;
 }
 
-/* Button hover effect */ 
-.tour-card .btn-remove:hover {
-    background-color: #ec407a;
+/* No tours styling button */ 
+.no-tours button {
+    background-color: #f8bcd0;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* No tours button hover effect */
+.no-tours button:hover {
+    background-color: #ec407a
 }
 
 /* No tours message */
@@ -92,9 +133,29 @@ h3 {
     color: #d6336c;
   }  
 
-/* No tours Button */
-  .no-tours button {
-    margin-top: 20px;
-  }
+/* Dropdown styling container*/
+.destination-selector {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-/* To do: 1) make "select destination bigger", 2) make dropdown bigger, 3) Not interested does not work, 4) make background color, 5) after fixing "Not Interested Button", make sure refresh works...*/
+/* Dropdown heading styling */
+.destination-selector h2 {
+    font-size: 2.5rem;
+    color: #d74e7c;
+    margin-bottom: 15px;
+}
+
+/* Dropdown select box styling */
+.destination-selector select {
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #d74e7c;
+    background-color: #f8d9e2;
+    color: #d6336c;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center
+}
+
