@@ -22,6 +22,12 @@ const App = () => { // Main App component
     }
   };
 
+  // Remove the Tour
+  const removeTour = (id) => { // Function to remove a tour
+    const updatedTours = tours.filter((tour) => tour.id !== id); // Filtering out the removed tour
+    setTours(updatedTours); // Updating tours state
+  };
+
   useEffect(() => { // useEffect to fetch tours data on component mount
     fetchTours();
   }, []);
@@ -35,10 +41,12 @@ const App = () => { // Main App component
         setSelected={setSelectedDestination}
       />
       <Gallery  // Gallery component to display tours
-        tours={tours}
+        tours={tours} 
         loading={loading}
         error={error}
         selectedDestination={selectedDestination}  // Filtered tours based on selected destination
+        onRemove={removeTour} // Function to remove a tour
+        onRefresh={fetchTours} // Function to refresh tours data
       />
     </main>
   );
