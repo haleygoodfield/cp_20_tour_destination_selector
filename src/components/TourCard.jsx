@@ -12,15 +12,18 @@ const TourCard = ({ id, image, info, price, name, onRemove }) => { // TourCard c
           <h4>{name}</h4>
           <h4 className="price">${price}</h4> {/* Price of the tour */}
         </div>
-        <p>
+        <p> 
           {readMore ? info : `${info.substring(0, 150)}...`} {/* Tour info with read more functionality */}
-          <button onClick={() => setReadMore(!readMore)}> {/* Toggle read more/less */}
+          </p>
+           {/* Grouping the buttons onto one line */} 
+           <div className="btn-group">
+            <button className="btn btn-readmore" onClick={() => setReadMore(!readMore)}> {/* Toggle read more/less */}
             {readMore ? 'Show Less' : 'Read More'} 
           </button>
-        </p>
-        <button className="remove-btn" onClick={() => onRemove(id)}> {/* Remove tour button */}
+        <button className="btn btn-remove" onClick={() => onRemove(id)}> {/* Remove tour button */}
           Not Interested {/* Button to remove the tour */}
         </button>
+        </div>
       </footer>
     </article>
   );
