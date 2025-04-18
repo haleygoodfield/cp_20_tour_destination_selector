@@ -14,9 +14,9 @@ const Gallery = ({ tours, loading, error, selectedDestination, onRefresh, onRemo
             {/* Message when no tours are available */}
             <h2>No Tours Left</h2> 
             {/* Option to select another destinaiton */}
-            <p>Please select a different destination.</p> 
+            <p> Refresh to reload, or select a different destination.</p> 
             {/*Refresh button to fetch tours again */}
-            <button onClick={onRefresh}>Refresh</button> 
+            <button onClick={onRefresh}>Refresh Tours</button> 
             </div>
         );
     }
