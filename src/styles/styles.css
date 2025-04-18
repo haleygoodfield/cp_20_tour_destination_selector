@@ -62,11 +62,21 @@ body {
 }
 
 /* Main Heading */
-h1 {
+h1, h2, h3 {
     color: #d74e7c;
     font-size: 5rem;
     font-weight: 700;
     text-align: center;
+}
+/* Making size smaller */
+h2 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+/* Making size even smaller */
+h3 {
+    font-size: 2rem;
+    margin: 10px 0;
 }
 
 /* Button hover effect */ 
@@ -82,14 +92,6 @@ h1 {
     color: #d6336c;
   }  
 
-/* Dropdown styling */
-  .destination-selector h2,
-  .destination-selector h3 {
-    font-size: 1.5rem;
-    border: 1px solid #d04387;
-    margin-bottom: 20px;
-    text-align: center;
-  }
 /* No tours Button */
   .no-tours button {
     margin-top: 20px;
