@@ -6,17 +6,24 @@ const Gallery = ({ tours, onRemove, loading, error, onRefresh }) => { // Gallery
     if (error) return <h2>Something went wrong. Please try again later.</h2>; // Error message
     if (tours.length === 0) { // No tours available
         return (
-            <div>
+            <div className="no-tours">  
             {/* Message when no tours are available */}
             <h2>No Tours Left</h2> 
-            {/* Option to select another destinaiton */}
-            <p> Refresh to reload, or select a different destination.</p> 
+
+            {/* Message to refresh destinations */}
+            <div className="refresh-container">
+            <p className ="refresh-msg">Refresh to reload, or select a different destination.
+              </p> 
+
             {/*Refresh button to fetch tours again */}
-            <button onClick={onRefresh}>Refresh Tours</button> 
+            <button onClick={onRefresh} className="btn-refresh">Refresh Tours
+              </button> 
             </div>
+          </div>
         );
     }
 
+  // Normal rendering the gallery of tours
   return ( 
     <section className="gallery">  
       {tours.map((tour) => (
