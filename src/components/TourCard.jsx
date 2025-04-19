@@ -10,7 +10,7 @@ const TourCard = ({ id, image, info, price, name, onRemove }) => { // TourCard c
       <footer>
         <div className="tour-info"> {/* Tour information */}
           <h4>{name}</h4>
-          <h4 className="price">${price}</h4> {/* Price of the tour */}
+          <h4 className="price">Total Cost: ${price}</h4> {/* Price of the tour */}
         </div>
         <p> 
           {readMore ? info : `${info.substring(0, 150)}...`} {/* Tour info with read more functionality */}

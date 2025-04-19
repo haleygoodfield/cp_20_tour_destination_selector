@@ -13,12 +13,13 @@ body {
 
 /* Tour card container */
 .tour-card {
-    background-color: #ecd9e2;
+    background-color: #ffdff2;
     border: 1px solid #bb9eac;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(248, 205, 211, 0.4);
     padding: 20px;
     margin: 20px;
+    max-width: 1500px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
@@ -31,20 +32,20 @@ body {
 
 /* Tour name styling (title)*/
 .tour-card .tour-info {
-    font-size: 2rem;
+    font-size: 2.3rem;
     color: #cb3b6d;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
 }
 /* Tour Price styling*/
 .tour-card .tour-price {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #c7567c;
     margin-bottom: 8px;
 }
 
 /* Tour card description (text) */
 .tour-card p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: #2d0d25;
     line-height: 1.7;
     margin-bottom: 20px;
@@ -63,14 +64,14 @@ body {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    font-size: 1 rem;
+    font-size: 1.5rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Read More button */
 .btn-readmore {
-    background-color: #f8bcd0;
+    background-color: #f8b6cd;
     color: #6e1844;
 }
 
@@ -93,7 +94,7 @@ h1, h2, h3 {
 
 /* Main heading style (h1) */
 h1 {
-    font-size: 5rem;
+    font-size: 6rem;
     margin: 30px 0;
 }
 
@@ -106,17 +107,6 @@ h2 {
 h3 {
     font-size: 2rem;
     margin: 10px 0;
-}
-
-/* Class created to center the refresh button */
-.no-tours {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-    padding: 20px;
 }
 
 /* Refresh section styling */
@@ -148,6 +138,9 @@ h3 {
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 10px;
     text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Refresh button hover effect */
@@ -161,16 +154,9 @@ h3 {
     margin-bottom: 30px;
 }
 
-/* Dropdown heading styling */
-.destination-selector h2 {
-    font-size: 2.5rem;
-    color: #d74e7c;
-    margin-bottom: 15px;
-}
-
 /* Dropdown select box styling */
 .destination-selector select {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #d74e7c;
@@ -181,3 +167,12 @@ h3 {
     text-align: center
 }
 
+/* Tours Available message styling */
+.tours-label {
+    font-size: 1.5rem;
+    color: #562535;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+}

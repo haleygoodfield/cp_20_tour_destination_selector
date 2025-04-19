@@ -3,12 +3,12 @@ import React from 'react'; // Importing React
 const DestinationSelector = ({ tours, selected, setSelected }) => { // DestinationSelector component
   const destinations = ["All", ...new Set(tours.map((tour) => tour.name))]; // Getting unique destinations from tours data
 
-  return ( // Rendering the component
+    return ( // Rendering the component
     <div className="destination-selector"> {/* Container for destination selector */}
       <h2>Have a Destination in Mind?</h2> {/* Heading for destination selector */}
       <h3> Select your destination below.</h3>
       <div className="dropdown">
-        <label htmlFor="destinations">Tours Available:</label> {/* Label for dropdown */}
+        <label htmlFor="destinations" className="tours-label">Tours Available:</label> {/* Label for dropdown */}
         <select
           id="destinations"
           value={selected} // Current selected destination
