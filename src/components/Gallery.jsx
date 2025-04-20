@@ -16,7 +16,7 @@ const Gallery = ({ tours, onRemove, loading, error, onRefresh }) => { // Gallery
             <h2>We're Sorry, No Tours Left.</h2> 
             {/* Message to refresh destinations */}
             <div className="refresh-container">
-            <p className ="refresh-msg">Refresh to reload, and select a different destination.</p> 
+            <p className ="refresh-msg">Refresh to reload all, or select a different destination.</p> 
             {/*Refresh button to fetch tours again */}
             <button onClick={onRefresh} className="btn-refresh">Refresh Tours</button> 
             </div>
