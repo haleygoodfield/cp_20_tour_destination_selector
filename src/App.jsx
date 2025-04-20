@@ -42,9 +42,9 @@ const App = () => { // Main App component
     <main>
       <h1>Explore Our Tours</h1> {/* Main heading */}
       <DestinationSelector // Destination selector component
-        tours={tours}
+        tours={tours} 
         selected={selectedDestination}
-        setSelected={setSelectedDestination}
+        setSelected={setSelectedDestination} // Set selected destination
       />
       <Gallery  // Gallery component to display tours
         tours={filteredTours} 

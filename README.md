@@ -16,5 +16,5 @@ This is my twentieth coding project, where I built a **React Tour Explorer app**
 3. Then, run: npm run dev
 4. Open the local host: http://localhost:5183/
 
-Note: API is fetched through CORS proxy
+**Note: API is fetched through CORS proxy**
 - This may take a few seconds to respond, please wait for the tours to load!
